@@ -1,0 +1,31 @@
+{
+  "name": "jispy",
+  "version": "1.0.0",
+  "description": "Module for Jispy Web Component",
+  "main": "jispy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "keywords": [
+    "lisp",
+    "interpreter"
+  ],
+  "author": "Joash Naidoo",
+  "license": "ISC",
+  "dependencies": {
+    "asyncify-wasm": "^1.2.1",
+    "exports-loader": "^5.0.0",
+    "fs": "^0.0.1-security",
+    "lit": "^3.1.2"
+  },
+  "devDependencies": {
+    "@web/dev-server": "^0.4.3",
+    "babel-loader": "^9.1.3",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.3",
+    "webpack": "^5.90.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.2"
+  }
+}

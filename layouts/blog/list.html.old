@@ -1,0 +1,19 @@
+{{ define "main" }}
+  {{- $readMore := (T "readMore") | default "Read more →" -}}
+  <div class="mx-auto flex {{ partial `utils/page-width` . }}">
+    {{ partial "sidebar.html" (dict "context" . "disableSidebar" true "displayPlaceholder" true) }}
+        <main class="w-full min-w-0 max-w-6xl px-6 pt-4 md:px-12">
+
+            <div class="hx-grid sm:hx-grid-cols-2 lg:hx-grid-cols-3 hx-grid-cols-1 hx-gap-4 hx-w-full not-prose">
+                 {{ range .Pages.ByDate.Reverse }}
+                    {{ partial "card.html" . }}
+                 {{ end -}}
+            </div>
+
+        </main>
+    <div class="max-xl:hidden h-0 w-64 shrink-0"></div>
+  </div>
+{{ end }}
+
+
+

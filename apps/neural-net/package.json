@@ -1,0 +1,28 @@
+{
+  "name": "neural-net",
+  "version": "1.0.0",
+  "description": "Webcomponent for MNIST neural network demo app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "joash naidoo",
+  "license": "ISC",
+  "devDependencies": {
+    "@web/dev-server": "^0.4.3",
+    "css-loader": "^6.10.0",
+    "file-loader": "^6.2.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.3",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs": "^4.17.0",
+    "@tensorflow/tfjs-backend-wasm": "^4.17.0",
+    "@tensorflow/tfjs-core": "^4.17.0",
+    "@tensorflow/tfjs-layers": "^4.17.0",
+    "lit": "^3.1.2",
+    "picnic": "^7.1.0"
+  }
+}

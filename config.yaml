@@ -1,0 +1,54 @@
+baseURL: http://joashnaidoo.com/
+languageCode: en-us
+title: Joash Nicholas Naidoo
+theme: hextra
+menu:
+  main:
+    - name: Blog
+      pageRef: /
+      weight: 1
+    - name: Webapps
+      pageRef: webapps/
+      weight: 2
+    - name: About
+      pageRef: about
+      weight: 3
+    - name: Search
+      weight: 4
+      params:
+        type: search
+    - name: GitHub
+      weight: 6
+      url: https://github.com/Joash09
+      params:
+        - icon: github
+    - name: LinkedIn
+      weight: 6
+      url: https://www.linkedin.com/in/joash-naidoo-658207176/
+      params:
+        - icon: linkedin
+    - name: Email
+      weight: 6
+      url: mailto:joash.n09@gmail.com
+      params:
+        - icon: at-symbol
+params:
+  navbar:
+    logo:
+      path: favicon.ico
+      dark: favicon.ico
+      link: /
+      width: 40
+      height: 20
+  page:
+    width: full
+  footer:
+    displayCopyright: true
+  blog:
+    list:
+      displayTags: true
+  search:
+    enable: true
+    type: flexsearch
+    flexsearch:
+      index: content

@@ -1,0 +1,7 @@
+
+
+{{ $neuralnetjs := resources.Get "/neuralnet-bundle.js" }}
+<script type="module" src="{{ $neuralnetjs.Permalink }}" defer></script>
+<div>
+    <neural-network-app></neural-network-app>
+</div>

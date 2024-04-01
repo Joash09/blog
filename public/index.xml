@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Just another blog</title>
+    <link>http://joashnaidoo.com/</link>
+    <description>Recent content on Just another blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://joashnaidoo.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Calculus Overview</title>
+      <link>http://joashnaidoo.com/posts/osimodel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://joashnaidoo.com/posts/osimodel/</guid>
+      <description>Calculus fundamentals Derivatives A note on notation Integration Generalized area between two curves Fundamental Theorem of Calculus Applications of derivatives Graphing functions Taylor series Newton-Raphson method Related rates of change and implicit differentiation Partial differentiation Double and triple integrals Find the mass of a surface Volume under a surface Calculating volumes by rotation and the washer method Generalized volumes 3D geometries Coordinate systems Euclidean vectors Vector independence Basis vectors Simple 3D geometries Changing coordinate systems and the Jacobian Linear algebra Abstract vector spaces Matrices for solving a system of equations Matrices as linear maps Determinant Cross product Inverse matrix Eigen vectors and Eigen values Diagonalization of matrix Vector calculus Scalar field and its gradient Lines and line integrals of scalar fields Vector field Divergence Curl Line integrals of vector fields Conservative vector fields and fundamental theorem of line integrals (path independence) Surface integrals and flux Green&amp;rsquo;s theorem (Divergence theorem) Stoke&amp;rsquo;s Theorem Differential equations First order Separable equations Systems of ODEs Second order The Laplace transform Partial differential equations Resources which helped me the most Calculus fundamentals University mathematics was one of the most challenging, interesting and stressful periods of my life thus far.</description>
+    </item>
+  </channel>
+</rss>

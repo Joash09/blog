@@ -1,0 +1,5 @@
+{{ $jispyjs := resources.Get "/jispy-bundle.js" }}
+<script type="module" src="{{ $jispyjs.Permalink }}" defer></script>
+<div>
+    <jispy-interpreter></jispy-interpreter>
+</div>
