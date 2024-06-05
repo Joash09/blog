@@ -6,7 +6,7 @@ tags = ["Linux", "kernel", "open-source", "Git"]
 draft = false
 +++
 
-I got interested in Linux in high school when I stumbled upon it as side note in a textbook. It was only in the following couple years did I realize the importance Linux had in the computer and programming community. Linux only refers to the operating system's kernel which is an abstraction that provides a unified platform so software to run on many different types of hardware. The kernel is open source software and anyone can contribute to its development. So after years of benefiting from the contributions of others I decided I would investigate the development process that makes it all possible.
+I got interested in Linux in high school when I stumbled upon it as side note in a textbook. It was only in the following couple years did I realize the importance Linux had in the computer and programming community. Linux only refers to the operating system's kernel which is an abstraction that provides a unified platform for software to run on many different types of hardware. The kernel is open source software and anyone can contribute to its development. So after years of benefiting from the contributions of others I decided I would investigate the development process that makes it all possible.
 
 <!--more-->
 

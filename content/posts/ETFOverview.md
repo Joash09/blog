@@ -6,7 +6,7 @@ tags = ["finance", "etfs", "stocks", "efficient-market-hypothesis"]
 draft = false
 +++
 
-Investing is a ubiquitous topic between family and friends and on social media. With many options to invest, many offering often conflicting advice and overwhelming finacial jargon I found it hard to understand it all. Here I take a look at Exchange Traded Funds ETFs, specifically finding out how they work and their possible failures.
+Investing is a ubiquitous topic between family and friends and on social media. With so many options, so many voices offering, often conflicting, advice and an overwhelming amount of financial jargon it is hard to know where to start. Here I take a look at Exchange Traded Funds ETFs, specifically finding out how they work and their possible failures.
 
 <!--more-->
 

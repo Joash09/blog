@@ -11,7 +11,7 @@ title: About
 > - Dick Guidon
 
 
-Hello and welcome to my little corner on the web! I created in site, in part, as a response to the quote above by Dick Guindon. Here I document my noteworthy explorations with various topics of interest as clearly and simply as possible. In particular, over the past couple years I've been mainly interested in:
+Hello and welcome to my little corner on the web! I created this site, in part, as a response to the quote above by Dick Guindon. Here I document my noteworthy explorations with various topics of interest as clearly and simply as possible. In particular, over the past couple years I've been mainly interested in:
 - Operating systems (specifically Linux) and hosting
 - Computer networking
 - Differential geometry and multilinear algebra
