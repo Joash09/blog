@@ -6,8 +6,7 @@ draft: false
 title: Basic Neural Network
 ---
 
-
-## Background
+Below you will find a canvas to draw all English alphanumeric characters, and have the neural network model I trained with the ever-popular MNIST dataset, and now running in your browser, guess what character you drew. Bare in mind the model is only about 83% accurate. Also for better results, please ensure the line you draw are continuous. 
 
 {{< neuralnet-app >}}
 
