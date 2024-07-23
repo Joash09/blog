@@ -7,7 +7,7 @@ draft = false
 math = "True"
 +++
 
-Modern physics relies on foundational mathemetical structures to describe nature. Topological spaces and sets are two of these fondational structures. Here I will outline topological spaces, how they are constructed from sets and some useful properties to describe them. This is the first in my collection of notes from the lecture series: "Geometrical Anatomy of Theorectical Physics" by Frederick Schuller.
+Modern physics relies on foundational mathemetical structures to describe nature. Topological spaces and sets are two of these fondational structures. Here I will outline topological spaces, how they are constructed from sets and some useful properties to describe them. This is the first post in my collection of notes from the lecture series: "Geometrical Anatomy of Theorectical Physics" by Frederick Schuller.
 
 <!--more-->
 
@@ -42,7 +42,7 @@ In set theory, there is a postulate (assumed truth) that there is a relationship
 
 ### Maps between sets {#maps-between-sets}
 
-In elementary calculus, you may recall the "ruler test" when determining whether the graph being looked at was a function. Classifications like these play an important role in mathematics. The are more fundamental classification of maps which I will outline here. However, before classifying maps it is worth introducing some terminology below and although domain/preimage and codomain/image sound similar notice the distinction.
+Recall from high school mathematics, a function is a map which passes the "ruler test." This test checks whether a single point in the domain maps to a single point in the codomain. Classifications like these play an important role in mathematics. The are more fundamental classifications of maps which I will outline here. However, before classifying maps it is worth introducing some terminology below and although domain/preimage and codomain/image sound similar notice the distinction.
 
 | Term              | Description                                                             |
 |-------------------|-------------------------------------------------------------------------|
@@ -98,14 +98,14 @@ The standard topology \\(\mathcal{O}\_{\text{s.t.}}\\) is only defined for sets 
 \\[\forall r \in \R^+\ \quad{\text{for every positive ball size}}\\]
 \\[B\_r(x) \coloneqq \Set { \underbrace{y}\_{(y^i, \dots, y^d)} \in \R^d | \sqrt[2n]{\sum\_{i=1}^{d}(y^i-x^i)^{2n}} < r}\\]
 
-There a set \\(U\\) is an element of the standard topology \\(\mathcal{O}\_{\text{s.t.}}\\) if:
+There a set \\(U\\) is an element of the standard topology \\(\mathcal{O}\_{\text{s.t.}}\\) if there exists a ball with a positive radius that matches all the points \\(p\\) in \\(U\\).
 
-\\[\forall p \in U: \exists r \in \R^{\*}\\]
+\\[\forall p \in U: \exists r \in \R^{+}: B\_r(p) \subseteq U\\]
 
 
 #### Chaotic and discreet {#chaotic-and-discreet}
 
-Are followign two topologies are the extremes in possible choices of subsets one could select when creating a topology. The chaotic toplogy is the simplest although not very useful. Simply in the chaotic toplogy, the choices of subsets for a set \\(M\\) is simply empty set and the set iteself (i.e. \\(\emptyset, \Set {M} \in \mathcal{O}\_{M(\text{chaotic})}\\)). The chaotic topology only has two subsets. On the other extreme, the discreet toplogy for set \\(M\\) includes the emtpy set and the power set of \\(M\\) (i.e. \\(\emptyset, \mathcal{P}(M) \in \mathcal{O}\_{M(\text{discreet})}\\))
+The following two topologies are the extremes for possible choices of subsets one could select when creating a topology. The chaotic toplogy is the simplest although not very useful. Simply, in the chaotic toplogy the choices of subsets for a set \\(M\\) is the empty set and the set iteself (i.e. \\(\emptyset, \Set {M} \in \mathcal{O}\_{M(\text{chaotic})}\\)). On the other extreme, the discreet toplogy for set \\(M\\) includes the emtpy set and the power set of \\(M\\) (i.e. \\(\emptyset, \mathcal{P}(M) \in \mathcal{O}\_{M(\text{discreet})}\\)).
 
 
 #### Initial {#initial}
