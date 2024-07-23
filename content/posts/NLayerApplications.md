@@ -1,5 +1,5 @@
 +++
-title = "Building N-Layer Applications with ORMs"
+title = "Building N-layer applications with ORMs"
 author = ["Joash Naidoo"]
 date = 2021-09-09T00:00:00+02:00
 tags = ["software", "architecture", "n-layer", "web"]
