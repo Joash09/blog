@@ -142,7 +142,7 @@ Ignoring the details of the function itself, we show the following obseravtions 
 | Linear scaling                                                                                                       | \\[A(\lambda \vec{a}, \vec{b}) = \lambda A(\vec{a}, \vec{b})\\]                | \\[(\lambda \vec{a}) \wedge \vec{b} = \lambda(\vec{a}\wedge\vec{b})\\]                     |
 | Linear addition                                                                                                      | \\[A(\vec{a} + \vec{b}, \vec{c}) = A(\vec{a}, \vec{c}) + A(\vec{b},\vec{c})\\] | \\[(\vec{a} + \vec{b}) \wedge \vec{c} = \vec{a} \wedge \vec{c} + \vec{b} \wedge \vec{c}\\] |
 
-Using this new function and aforementioned properties whilst assuming a basis \\(\vec{e\_1}\\) and \\(\vec{e\_2}\\) for vectors \\(\vec{a}\\) and \\(\vec{b}\\) in \\(\R^2\\), the new area function taking two vectors in \\(\R^2\\) has the following general solution. Notice how it is the same result as the determinate of a matrix whose columns correspnd to vectors \vec{a} and \vec{b}.
+Using this new function and aforementioned properties whilst assuming a basis \\(\vec{e\_1}\\) and \\(\vec{e\_2}\\) for vectors \\(\vec{a}\\) and \\(\vec{b}\\) in \\(\R^2\\), the new area function taking two vectors in \\(\R^2\\) has the following general solution. Notice how it is the same result as the determinate of a matrix whose columns correspnd to vectors \\(\vec{a}\\) and \\(\vec{b}\\).
 
 \\[
 \begin{align\*}
