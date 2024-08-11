@@ -246,11 +246,9 @@ As we have seen in the VM configuration process earlier, an interface maps direc
 
 As described earlier the OPNSense instance, has a collection of interfaces. We assign a block of IP addresses to each interface. We refer to this block of IP addresses as a _subnet_ and the size of the subnet is determined by its _prefix_ size. For example a interface may have an IP of 192.168.1.1 and a /24 prefix. This means there are 254 addresses devices connected to this interface can choose from (i.e. 192.168.1.2 to 192.168.1.254). See CIDR notation for more information. Splitting the network up into subnets allows for better control and security over the network. Different firewall rules for different subnets can protect malicious activity from reaching your protected devicess.
 
-Since the OPNsense is acting as my router, one interface must be the WAN (i.e. your ISP). Typically all other interfaces have the LAN assignment, although for more complex setups you could have VLAN, LAGG, TUN etc. interfaces. Your ISP determines the WAN interface's IP address, so check with them if they assign it statically, dynamically with DHCP or through PPPoE. The interface which will connect our firewall/router VM to the rest of the home network has a static IP address since we want that to stay constant. OPNSense will also automatically configure a DHCP server for all the other LAN interfaces, so that devices connected to these interfaces can automatically get an IP address.
+Since the OPNsense is acting as my router, one interface must be the WAN (i.e. your ISP). Typically all other interfaces have the LAN assignment, although for more complex setups you could have VLAN, LAGG, TUN etc. interfaces. Your ISP determines the WAN interface's IP address, so check with them if they assign it statically, dynamically with DHCP or through PPPoE. The interface which will connect our firewall/router VM to the rest of the home network has a static IP address since we want that to stay constant. OPNSense will also automatically configure a DHCP server for all the other LAN interfaces, so that devices connected to these interfaces can automatically get an IP address. The OPNSense LAN interface also acts as the default gateway for any device connected to the LAN network. Below, is my network diagram of how I plan to segment my network.
 
-Below, is my network diagram of how I plan to segment my network.
-
-The OPNSense LAN interface also acts as the default gateway for any device connected to the LAN network.
+{{< figure src="/ox-hugo/HomeNetwork.png" >}}
 
 
 ### Initial firewall rules for interfaces {#initial-firewall-rules-for-interfaces}
