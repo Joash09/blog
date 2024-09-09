@@ -3,7 +3,7 @@ title = "Lie theory"
 author = ["Joash Naidoo"]
 date = 2024-09-09T00:00:00+02:00
 tags = ["mathematics", "group-theory", "manifolds", "symmetry", "Lie-theory", "physics"]
-draft = true
+draft = false
 math = "True"
 +++
 
