@@ -7,7 +7,7 @@ draft = false
 math = "True"
 +++
 
-Lie theory marries manifolds to group theory. Groups are mathematical structures used to describe symmetries. But note, symmetries extend beyond discrete rotations and reflections of shapes. Instead symmetries describe phenomena which does not change the outcome of an experimental observation. For example whether an experiment done today should have the same result of the same experiment done tomorrow. By treating groups as manifolds we can model _continuous_ symmetries and use our tools of differential geometry to describe these groups.
+Lie theory marries manifolds to group theory. Groups are mathematical structures used to describe symmetries. Note, symmetries extend beyond our initial intuition of discrete rotations and reflections of shapes. Instead symmetries describe phenomena which do not change the outcome of an experimental observation. For example an experiment done today should have the same result if done tomorrow. By treating groups as manifolds we can model _continuous_ symmetries and use our tools of differential geometry to describe these groups.
 
 <!--more-->
 
