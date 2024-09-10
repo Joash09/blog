@@ -408,15 +408,6 @@ As previously mentioned, Let's Encrypt certificates expire earlier than other pa
     ```
 
 
-### Non-root Docker {#non-root-docker}
-
-For the same security reason I wanted to run my VMs as a non-privileged user, so do I want my containers to run as non-privileged users.
-
-{{< callout >}}
-Work in progress...
-{{< /callout >}}
-
-
 ### Networking {#networking}
 
 Docker provides us with 3 types of networks, namely:
@@ -430,7 +421,7 @@ I selected to use macvlan networking, given it has simplicity and lighter overhe
 ```bash
 docker network create \
     --driver macvlan  \
-    --subnet=192.168.2.1/24 \
+    --subnet=192.168.2.0/24 \
     --gateway=192.168.2.1 \
     -o parent=ens1 docker_network
 

@@ -64,7 +64,8 @@ As shown in the previous post, a set of vector fields can be made into an algebr
 
 ## Lie algebras {#lie-algebras}
 
-Recall an algebra is a vector space equipped with "product" operation. The vector space in question is the tangent vector space at a point on the Lie group. This vector space is equipped with a Lie bracket \\(\llbracket \cdot, \cdot \rrbracket\\) to become a Lie algebra. The Lie bracket has the following properties:
+Recall an algebra is a vector space equipped with "product" operation. The vector space in question is the tangent vector space at a point on the Lie group. This vector space is equipped with a Lie bracket \\(\llbracket \cdot, \cdot \rrbracket\\) to become a Lie algebra.
+The Lie bracket has the following properties:
 
 1.  Bilinear
 2.  Anti-symmetric
@@ -72,7 +73,9 @@ Recall an algebra is a vector space equipped with "product" operation. The vecto
 3.  Jacobi identity
     \\[ \llbracket x, \llbracket y, z \rrbracket \rrbracket + \llbracket y, \llbracket x, z\rrbracket \rrbracket + \llbracket z, \llbracket x, y \rrbracket \rrbracket = 0 \\]
 
-The Lie bracket is different to the "commutator" bracket of vector fields, however
+It is important to note that the Lie bracket is different to the "commutator" bracket of vector fields, but we will try to define the Lie bracket in terms of the commutator of vector fields.
+
+Finally a Lie algebra is differentiated from the Lie group by being written in lower case Fraktur font. For example the Lie group \\(SO(3, \R)\\) has corresponding Lie algebra \\(\frak{so}(3, \R)\\).
 
 
 ## Isomorphism between vector fields on Lie groups and vectors in Lie algebra {#isomorphism-between-vector-fields-on-lie-groups-and-vectors-in-lie-algebra}
@@ -132,7 +135,7 @@ Any finite dimensional Lie algebra can be decomposed as follows, where \\(R\\) i
 The Killing form is a bilinear map which we will equip to a Lie algebra. It is defined abstractly, but the operation acts as a pseudo inner product for semi-simple Lie algebras.
 
 
-#### Inner product space of an algebra {#inner-product-space-of-an-algebra}
+### Inner product space of an algebra {#inner-product-space-of-an-algebra}
 
 Recall a vector space is simply a set equipped with addition and s-multiplication operations. We have yet to describe an operation that will allow us to calculate geometric lengths and angles of vectors. Thus, one can introduce the inner product operation, a bilinear map, which will allow us to do just that. Such a map must have the following properties:
 
@@ -143,7 +146,7 @@ Recall a vector space is simply a set equipped with addition and s-multiplicatio
 Interesting examples of inner product spaces for the tangent space of a manifold equipped with an inner product gets the name: **Riemannian manifold**. This manifold is particularly useful in describing general relativity. However, to build up to the Killing form, one must recognize we can weaken the positive definiteness property of the inner product.
 
 
-#### Trace operation {#trace-operation}
+### Trace operation {#trace-operation}
 
 The trace of a matrix is an interesting operation which requires us to first consider how it is defined in terms of the matrix components, but then it proves to not rely on a basis and provides deeper insight to the eigenvalues and inner product space for that matrix (i.e. linear transformation). The trace of a matrix is given as:
 
@@ -156,7 +159,7 @@ To show the trace operation does not depend on a basis consider two similar matr
 Thus we see the trace \\(tr\\) is an element of the set of endomorphisms for a vector space \\(V\\) (i.e. $f: V \xrightarrow{\sim} V $). It is also trivial to show \\(tr(AB) = tr(BA)\\), thus the trace is an operation which is natural to introduce when defining operations that must be symmetric (such as the inner product). It also follows directly since \\(tr(AB) = tr(BA)\\), then that if the trace of the commutator between \\(A\\) and \\(B\\) is zero (i.e. \\(tr([A, B]) = 0\\)).
 
 
-#### Killing form {#killing-form}
+### Killing form {#killing-form}
 
 \\[K: L \times L \xrightarrow{\sim} \cnums \\]
 \\[ K(a, b) \coloneqq tr(ad(a) \circ ad(b)) \\]
@@ -245,3 +248,13 @@ Steps to draw a Dynkin diagram:
 {{< figure src="/ox-hugo/Connected_Dynkin_Diagrams.svg" >}}
 
 From the Dynkin diagram, we can classify two Lie algebra series. The classical series includes \\(A\_l: l \geq 1\\), \\(B\_l: l \geq 2\\), \\(C\_l\\) and \\(D\_l\\). The exceptional series includes \\(E\_6\\), \\(E\_7\\), \\(E\_8\\), \\(F\_4\\) and \\(G\_2\\).
+
+
+## Representation of a Lie algebra {#representation-of-a-lie-algebra}
+
+A linear representation \\(\rho\\) of a Lie algebra is a linear map to the set of endomorphisms for a vector space \\(V\\) (i.e. maps from the vector space into itself) such that the Lie bracket is simply the commutator in the **representation space** \\(V\\).
+
+\\[\rho: L \xrightarrow{\sim} End(V)\\]
+\\[\rho(\llbracket a, b \rrbracket) = [\rho(a),\rho(b)] = a \circ b - b \circ a \\]
+
+A single Lie algebra may have multiple representations. For example the Lie algebra \\(\frak{so}(3, \R)\\) has a representation \\(\rho: \frak{so}(3, \R) \rightarrow End(\R^3)\\) or, more famously, the spin representation \\(\frak{so}(3, \R) \rightarrow End(\cnums^2)\\).
