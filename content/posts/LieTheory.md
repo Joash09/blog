@@ -64,7 +64,7 @@ As shown in the previous post, a set of vector fields can be made into an algebr
 
 ## Lie algebras {#lie-algebras}
 
-Recall an algebra is a vector space equipped with "product" operation. The vector space in question is the tangent vector space at a point on the Lie group. This vector space is equipped with a Lie bracket \\(\llbracket \cdot, \cdot \rrbracket\\) to become a Lie algebra.
+Recall an algebra is a vector space equipped with "product" operation. The vector space in question is the tangent vector space at a point on the Lie group. This vector space \\(T\_eG\\) is equipped with a Lie bracket \\(\llbracket \cdot, \cdot \rrbracket\\) to become a Lie algebra.
 The Lie bracket has the following properties:
 
 1.  Bilinear
@@ -73,18 +73,35 @@ The Lie bracket has the following properties:
 3.  Jacobi identity
     \\[ \llbracket x, \llbracket y, z \rrbracket \rrbracket + \llbracket y, \llbracket x, z\rrbracket \rrbracket + \llbracket z, \llbracket x, y \rrbracket \rrbracket = 0 \\]
 
-It is important to note that the Lie bracket is different to the "commutator" bracket of vector fields, but we will try to define the Lie bracket in terms of the commutator of vector fields.
+It is important to note that the Lie bracket is different to the "commutator" bracket of vector fields, but we will try to define the Lie bracket in terms of the commutator of vector fields by introducing "representations" of Lie algebra.
 
-Finally a Lie algebra is differentiated from the Lie group by being written in lower case Fraktur font. For example the Lie group \\(SO(3, \R)\\) has corresponding Lie algebra \\(\frak{so}(3, \R)\\).
+Finally a Lie algebra is differentiated from the Lie group by being written in lower case \\(\frak{\text{Fraktur}}\\) font. For example the Lie group \\(SO(3, \R)\\) has corresponding Lie algebra \\(\frak{so}(3, \R)\\).
+
+
+## Representation of a Lie algebra {#representation-of-a-lie-algebra}
+
+A linear representation \\(\rho\\) of a Lie algebra is a linear map to the set of endomorphisms for a vector space \\(V\\) (i.e. maps elements in a vector space into itself) such that the Lie bracket is simply the commutator in the **representation space** \\(V\\).
+
+\\[\rho: L \xrightarrow{\sim} End(V)\\]
+\\[\rho(\llbracket a, b \rrbracket) = [\rho(a),\rho(b)] = a \circ b - b \circ a \\]
+
+The motivation for introducing the adjoint operation acting on the set of left-invariant vector fields for a Lie group \\(L(G)\\), is to define a Lie bracket as simply the commutator of vector fields as follows:
+
+\\[ \llbracket a, b \rrbracket = [l\_{g^\*}(a), l\_{g^\*}(b)]\\]
+
+The adjoint representation is not the only representation of a Lie algebra. For example the Lie algebra \\(\frak{so}(3, \R)\\) also has a representation \\(\rho: \frak{so}(3, \R) \rightarrow End(\R^3)\\) or, more famously, the spin representation \\(\frak{so}(3, \R) \rightarrow End(\cnums^2)\\).
 
 
 ## Isomorphism between vector fields on Lie groups and vectors in Lie algebra {#isomorphism-between-vector-fields-on-lie-groups-and-vectors-in-lie-algebra}
 
 There is an equivalence between thinking of a vector field or simply thinking about the tangent space at the identity operation of a Lie group.
 
-\\((L(G), [\cdot, \cdot]) \cong (T\_eG, \llbracket \cdot, \cdot \rrbracket)\\)
+\\[(L(G), [\cdot, \cdot]) \cong (T\_eG, \llbracket \cdot, \cdot \rrbracket)\\]
 
-To shift between these two spaces, we can introduce the **exponentiation** map.
+One can prove this vector space isomorphism by introducing the following linear map \\(j\\), and showing \\(j\\) is linear, left-invariant bijective map. For more tangible calculations \\(j\\) is referred to as the **exponential** map.
+
+\\[j: T\_eG \xrightarrow{\sim} L(G)\\]
+\\[A \mapsto j(A) \coloneqq l\_{g^\*}(A) \quad \forall g \in G\\]
 
 
 ## Classifying Lie subgroups and subalgebras {#classifying-lie-subgroups-and-subalgebras}
@@ -92,35 +109,38 @@ To shift between these two spaces, we can introduce the **exponentiation** map.
 As we will see in the following sections, an important theme in group theory is to study the subgroups (and respective subalgebras) of a Lie group. The goal is be able to decompose a Lie algebra into a "product" of simple Lie algebras and subalgebras.
 
 
+### Solvable groups and Lie algebras {#solvable-groups-and-lie-algebras}
+
+A subgroup is simply a subset of elements belonging to a group, which can be equipped with the group operation and be made into a group itself (i.e. must contain the identity element and be closed under the group operation). The simplest subgroup for all groups is the trivial subgroup which only contains the identity element. More interesting subgroup classifications include normal subgroups which has the following additional property.
+
+\\[H \subset G: x \in H: xHx^{-1} = H\\]
+
+From normal subgroups, we can construct another class of subgroups called quotient groups. Quotient groups are constructed from equivalence classes of elements. As discussed previously in topology, fundamental group is a quotient group.
+
+Another important subgroup of a group is the commutator subgroup. The commutator operation of a group is defined as:
+
+\\[[g, h] = g^{-1}h^{-1}gh\\]
+
+If \\(g\\) and \\(h\\) commute, then \\([g, h] = e\\). The commutator subgroup \\(N\\) is generated by all the possible commutators for elements in a group \\(G\\). The quotient group \\(G \ N\\) is abelian if and only if \\(N\\) is a commutator subgroup. A group is solvable if by continuously taking the quotient group of the group before with respect to the commutator subgroup you arrive at the identity element \\(e\\). Naturally if the group is only made up of commutative operations, then the group is trivially solvable.
+
+Recalling the equivalence between Lie groups and Lie algebras, we can extend this notion of solvable groups to Lie algebras. A trivial example of a solvable Lie algebra is an abelian algebra since by definition \\([a, b] = 0\\).
+
+\\[\Set{0} \subseteq \dots \subseteq [[R, R], [R, R]] \subset [R, R] \\]
+
+
 ### Ideals of a ring {#ideals-of-a-ring}
 
-Recall a ring is a set equipped with a multiplication operation which does not require an inverse. For any ring, we can construct a subset of the ring \\(I \subset R\\) preserving the same multiplication operation. This subset is an ideal of the ring. A simple example of a ideal for the ring of integers \\(\Z\\) is all the even numbers. The product of two even numbers will itself be an even number. For any ring there are at least two **trivial** ideals, the identity of the ring (since the product of identity, the only element of this ideal, with itself is the identity) and the ring itself.
+Recall a ring is a set equipped with a multiplication operation which does not require an inverse. For any ring, we can construct a subset of the ring \\(I \subset R\\) preserving the same multiplication operation. This subset is an ideal of the ring. A simple example of a ideal is the set of even numbers in ring of integers \\(\Z\\). The product of two even numbers will itself be an even number. For any ring there are at least two **trivial** ideals, the identity of the ring (since the product of identity, the only element of this ideal, with itself is the identity) and the ring itself.
 
-Ideals for a ring a analogous to subgroups. I discussed earlier how \\(SL(n, \R)\\) and \\(SO(n, \R)\\) are subgroups to the Lie group \\(GL(n, \R)\\). Following this, we can extend the notion of ideals to Lie algebras. Recall the isomorphism between the Lie group and its algebra. The ideal of a Lie _algebra_ is therefore a sub-vector space (group equipped with a Lie bracket \\([\cdot, \cdot]\\)) such that \\([I, L] \subset I\\). Similarly to rings, Lie algebras have the following trivial ideals.
+Ideals for a ring are analogous to subgroups for a group. I discussed earlier how \\(SL(n, \R)\\) and \\(SO(n, \R)\\) are subgroups to the Lie group \\(GL(n, \R)\\). Following this, we can extend the notion of ideals to Lie algebras. Recall the isomorphism between the Lie group and its algebra. The ideal of a Lie _algebra_ is therefore a sub-vector space (group equipped with a Lie bracket \\([\cdot, \cdot]\\)) such that \\([I, L] \subset I\\). Similarly to rings, Lie algebras have the following trivial ideals.
 
 \\[ [\Set{0}, L] = \Set{0} \\]
 \\[ [L, L] \subseteq L \\]
 
 
-### Solvable groups and Lie algebras {#solvable-groups-and-lie-algebras}
-
-Another important subgroup of a group is the commutator subgroup. Recall the commutator is a measure of how close two operations are to being commutative (i.e. abelian).
-
-Extending this notion to algebras:
-
-\\[\Set{0} \subset \dots \subset [[R, R], [R, R]] \subset [R, R] \\]
-
-A trivial example of a solvable Lie algebra is an abelian algebra since by definition \\([a, a] = 0\\).
-
-
 ### Simple Lie groups and Lie algebras {#simple-lie-groups-and-lie-algebras}
 
 A group is simple if it is non-trivial and does _not_ contain any non-trivial ideals (i.e. can't construct any ideals from the group other than the two trivial ideals).
-
-
-### Normal subgroups {#normal-subgroups}
-
-\\[H \subset G: x \in H: xHx^{-1} = H\\]
 
 
 ### Levi Decomposition {#levi-decomposition}
@@ -248,13 +268,3 @@ Steps to draw a Dynkin diagram:
 {{< figure src="/ox-hugo/Connected_Dynkin_Diagrams.svg" >}}
 
 From the Dynkin diagram, we can classify two Lie algebra series. The classical series includes \\(A\_l: l \geq 1\\), \\(B\_l: l \geq 2\\), \\(C\_l\\) and \\(D\_l\\). The exceptional series includes \\(E\_6\\), \\(E\_7\\), \\(E\_8\\), \\(F\_4\\) and \\(G\_2\\).
-
-
-## Representation of a Lie algebra {#representation-of-a-lie-algebra}
-
-A linear representation \\(\rho\\) of a Lie algebra is a linear map to the set of endomorphisms for a vector space \\(V\\) (i.e. maps from the vector space into itself) such that the Lie bracket is simply the commutator in the **representation space** \\(V\\).
-
-\\[\rho: L \xrightarrow{\sim} End(V)\\]
-\\[\rho(\llbracket a, b \rrbracket) = [\rho(a),\rho(b)] = a \circ b - b \circ a \\]
-
-A single Lie algebra may have multiple representations. For example the Lie algebra \\(\frak{so}(3, \R)\\) has a representation \\(\rho: \frak{so}(3, \R) \rightarrow End(\R^3)\\) or, more famously, the spin representation \\(\frak{so}(3, \R) \rightarrow End(\cnums^2)\\).
