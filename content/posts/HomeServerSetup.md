@@ -6,27 +6,27 @@ tags = ["Virtualization", "networking", "firewalls", "OPNSense", "KVM", "LVM", "
 draft = false
 +++
 
-Finally building a dedicated home server / lab was my biggest, most enjoyable projects in recent years. It provided me even more experience in Linux administration as well as introduce a whole field of network administration and security.
+Finally building a dedicated home server / lab was one of my biggest, most enjoyable projects in recent years. It provided me even more experience in Linux administration as well as introduce me to a whole field of network administration and security.
 
 <!--more-->
 
 
 ## Hardware {#hardware}
 
-Building a home server begins with hardware. Unlike choosing a home PC, most home servers do not require top of the range hardware since they are mostly at idle. Furthermore, recent developments in mobile CPU architecture means home server builds can be small and affordable. This is in stark contrast to the perception servers are expensive rack mounted behemoths. Along with affordable, my requirements for my server was to include two or more Gigabit network interface cards and as many SATA slots as possible. Following the advice of this [YouTube video](https://www.youtube.com/watch?v=vjDoQA4C22c), I decided on TopTon's Intel n5105 NAS motherboard. It features 4 2.5 Gigabit NICs, 6 SATA slots and 2 M.2 form factor PCIE expansion slots.
+Building a home server begins with hardware. Unlike choosing hardware for a home PC, most home servers do not require top-of-the-range hardware since they are mostly at idle. Furthermore, recent developments in mobile CPU architecture means home server builds can be small and affordable. This is in stark contrast to the perception that servers are expensive rack mounted behemoths. Along with affordable, my requirements for my server was to include two or more Gigabit network interface cards and as many SATA slots as possible. Following the advice of this [YouTube video](https://www.youtube.com/watch?v=vjDoQA4C22c), I decided on TopTon's Intel n5105 NAS motherboard. It features four 2.5 Gigabit NICs, six SATA slots and two M.2 form factor PCIE expansion slots.
 
-A power supply, is an often overlooked but important choice for a home server build since this machine will be on for 24/7. When thinking about power supplies consider their efficiencies will change depending on the load. Since the server will typically be idling most of the time I needed a power supply which is efficient at lower loads. Furthermore it is important to consider their is a premium to be paid for more efficient power supplies. A premium for a marginally better efficiency may take years to break even, hence it is worth doing a couple back of the envelop calculations before hand.
+A power supply, is an often overlooked but important choice for a home server build since this machine will be running 24/7. When choosing a power supply, consider their rated efficiency changes depending on their current load. Since the server will typically be idling most of the time I needed a power supply which is efficient at lower loads. Furthermore it is important to consider you pay a premium for more efficient power supplies. However, the premium for a marginally more efficient power supply may take years to eventually break even, hence it is recommended to do a couple back-of-the-envelop power calculations before hand.
 
 {{< figure src="/ox-hugo/topton_n5101.jpeg" >}}
 
 
 ## Non-root hypervisor setup {#non-root-hypervisor-setup}
 
-I planned for the hypervisor to run as minimally as possible, with only the necessary tools required to spin up and manage virtual machines. To spin up VMs I opted for QEMU with the KVM backend. To manage storage, I opted for LVM which allows me to abstract storage away from disks so I can resize and snapshot partitions on the fly. To manage the running VMs, I opted to use libvirt. libvirt is a tool which provides a unified platform for administrating virtualized resources (e.g. VMs) created using different back-ends such as QEMU or VirtualBox. It also has functionality for administrating different types of containers such as Docker or LXD, as well as virtualized networking and storage.
+I planned for the hypervisor to run as minimally as possible, with only the necessary tools required to spin up and manage the virtual machines (VMs). To spin up the VMs I opted for QEMU with the KVM backend. To manage storage, I opted for LVM which allows me to abstract storage away from disks so I can resize and snapshot partitions on the fly. To manage the running VMs, I opted to use libvirt. libvirt is a tool which provides a unified platform for administrating virtualized resources (e.g. VMs) created using different back-ends such as QEMU or VirtualBox. It also has functionality for administrating different types of containers such as Docker or LXD, as well as virtualized networking and storage.
 
-Finally, a really important feature for me was being able to run the VMs without root access. It bothered me that VMs are typically run as root, and that a compromised VM with root access effectively has access to my entire system. Running VMs as root is also a minor reason why I opted to ignore solutions such as Proxmox or TrueNAS.
+Finally, a really important feature for me was being able to run the VMs without root access. It bothered me that VMs are typically run as root, and that a compromised VM with root access effectively has access to my entire system. Running VMs as root is also a minor reason why I opted to ignore mature solutions such as Proxmox or TrueNAS.
 
-Another design decision I made was for a non-graphical hypervisor. Display servers and desktop environments, in my opinion added unnecessary compute overhead to my already modest server. Secondly display managers add extra bloat and attack vectors to my system, but this is probably more of a minor issue.
+Another design decision I made was for a non-graphical hypervisor. Display servers and desktop environments, in my opinion, added unnecessary compute overhead to my already modest server. Secondly display managers add extra bloat and attack vectors to my system, but this is probably more of a minor issue.
 
 
 ### Hypervisor LVM setup {#hypervisor-lvm-setup}
@@ -157,7 +157,7 @@ WantedBy=multi-user.target
 
 ## Headless OPNSense install and network setup {#headless-opnsense-install-and-network-setup}
 
-The first VM installed was OPNSense which now acts as my home router and firewall. To install the VM, I made use of virt-install, a tool included in the libvirt package. A OPNSense install image (.img) can be downloaded from their website. The nano version makes sense for a headless setup. However, since virt-install (more specifically QEMU working behind the scenes) cannot just mount any format (i.e. .img), some preparation must be done first. Using QEMU's builtin image to qcow2 format converter convert the image, then mount and install (i.e. unpack) the resulting qcow2 image to our desired LVM volume. Finally, also notice in command below, how the NIC devices are being "passed through" to the VM.
+The first VM installed was OPNSense which acts as my home router and firewall. To install the VM, I made use of virt-install, a tool included in the libvirt package. A OPNSense install image (.img) can be downloaded from their website. The nano version makes sense for a headless setup. However, since virt-install (more specifically QEMU working behind the scenes) cannot just mount any format (i.e. .img), some preparation must be done first. Using QEMU's builtin image to qcow2 format converter, convert the image, mount and install (i.e. unpack) the resulting qcow2 image to our desired LVM volume. Finally, also notice in command below, how the NIC devices are being "passed through" to the VM.
 
 ```bash
 qemu-img convert -f raw -O qcow2 image.img image.qcow2
@@ -183,7 +183,7 @@ On startup, OPNSense will try to automatically try to configure your NICs. One o
 
 ## Headless Ubuntu Server VM install {#headless-ubuntu-server-vm-install}
 
-Typically a user will have a graphical interface when installing an operating system like Ubuntu. In a headless hypervisor setup a graphical interface is not avaiable. Instead we have to pass kernel options to the installer so it can run in the command line.
+Typically a user will have a graphical interface when installing an operating system like Ubuntu. In a headless hypervisor setup a graphical interface is not available. Instead we have to pass kernel options to the installer so it can run in the command line.
 
 ```bash
 exec virt-install \
@@ -466,7 +466,7 @@ We are going to allow the follow LAN IP ranges access to the database by adding 
 # IPv4 LAN connections
 # host  DATABASE        USER            ADDRESS                 METHOD
 host    all             all             192.168.1.1/24          trust
-host    all             all             192.168.2.1/24          trust
+phost    all             all             192.168.2.1/24          trust
 ```
 
 ```bash
