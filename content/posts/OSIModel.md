@@ -6,7 +6,7 @@ tags = ["OSI", "Networking"]
 draft = false
 +++
 
-At its core networking is simply tackles the problem of how two or more computers can communicate with each other.
+At its core, networking simply tackles the problem of how two or more computers communicate with each other.
 Unfortunately, the field of networking is heavily laden with jargon, loosely used and overlapping terms and I wanted to get to the bottom of it once and for all.
 Thankfully, the Open Systems Interconnection (OSI) model can be used as a map to explore the field of networking.
 
@@ -23,6 +23,8 @@ It is vital for these two computers to agree on everything from the data structu
 For complex networks, specifically the internet, in order to transmit this data we will traverse down the OSI model layers introducing more rules and information (typically through headers) dictating how to transmit the data.
 Conversely, when the recipient receives the data, it will work up from the lowest layer back to the application layer (i.e. the format in which the data was originally sent).
 By abstracting networking functionality into layers a web programmer is never concerned about the implementation details of the lower layers. They are only concerned with the application layers.
+
+{{< figure src="/ox-hugo/OSI_Model_-_en.png" >}}
 
 
 ## Physical Layer {#physical-layer}
