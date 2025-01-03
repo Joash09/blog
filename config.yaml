@@ -7,7 +7,7 @@ menu:
     - name: Blog
       pageRef: /
       weight: 1
-    - name: Webapps
+    - name: Project Showcase
       pageRef: webapps/
       weight: 2
     - name: About

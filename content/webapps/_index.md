@@ -1,9 +1,9 @@
 ---
 cascade:
   type: docs
-title: Webapps
+title: Project Showcase
 ---
 
-There are two approaches which work for me when learning a topic. One is to try explain it, which justifies my blog. The other is to build something, which is why I am keeping a collection of things I have built here. Choose a webapp from the left to get started.
+Welcome! Herein lies various projects I have completed. They are a mix of webapps highlighting topics in computer science, custom PCB designs and 3D CAD models. 
 
-These webapps were built using [Lit](https://lit.dev/) Web Components and simply embedded into this Hugo static site. 
+For those interested, the webapps were embedded using [Lit](https://lit.dev/) Web Components. Custom PCBs are designed with the open source [KiCAD](https://www.kicad.org/) software, and similarly the 3D CAD models are done with the open source [FreeCAD](https://www.freecad.org/) software.
