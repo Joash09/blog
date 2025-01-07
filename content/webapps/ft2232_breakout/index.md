@@ -16,15 +16,14 @@ This project is a breakout board for FTDI's [FT2232H](https://ftdichip.com/produ
 
 ## PCB Design
 
-The PCB is a two layer board with the top layer for signal and power routes and the bottom layer as a ground plane. The signal traces measures 0.3mm and 0.5mm power traces. Vias to the ground plane had a diameter of 0.7mm and hole diameter of 0.4mm. Signal and via dimensions were chosen specifically to meet manufacturer's capabilities. Most passive SMD components were given an 0805 size for easy hand soldering later. The PCB layout and render are given below.
+The PCB is a two layer board with the top layer for signal and power routes and the bottom layer as a ground plane. The signal traces measures 0.3mm and 0.5mm for the power traces. Vias to the ground plane had a diameter of 0.7mm and hole diameter of 0.4mm. Signal and via dimensions were chosen specifically to meet manufacturer's capabilities. Most passive SMD components were given an 0805 size for easy hand soldering later. The PCB layout and render are given below.
 
 ![PCBesign](/ft2232h_breakout/front_pcb.jpg)
 ![PCBRenderFront](/ft2232h_breakout/pcb_render_front.jpg)
-![PCBRenderBack](/ft2232h_breakout/pcb_render_back.jpg)
 
 ## PCB Manufactured
 
-The PCB was manufactured with JLCPCB in China using FR-4 material (most common).
+The PCB was manufactured with JLCPCB in China using FR-4 material (most common). The outer dimensions of the board measured 46 mm x 56.3 mm.
 
 ![ManufacturedFront](/ft2232h_breakout/manufactured_front.jpeg)
 ![ManufacturedFront](/ft2232h_breakout/manufactured_back.jpeg)
