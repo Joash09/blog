@@ -1,7 +1,7 @@
 +++
 title = "Lie theory"
 author = ["Joash Naidoo"]
-date = 2024-09-09T00:00:00+02:00
+date = 2024-09-09T00:00:00-00:00
 tags = ["mathematics", "group-theory", "manifolds", "symmetry", "Lie-theory", "physics"]
 draft = false
 math = "True"
@@ -16,24 +16,24 @@ This the fourth writeup in my collection of notes from the lecture series: "Geom
 {{< youtube mJ8ZDdA10GY >}}
 
 
-## Lie groups {#lie-groups}
+## Introduction to groups and Lie groups {#introduction-to-groups-and-lie-groups}
 
 Although I have spent quite a few words on "symmetries", I find it is best to study groups abstractly and only then see how groups can be applied to represent symmetries. Beginning with a set \\(G\\), a group \\((G, \bullet)\\) is a set equipped with a single operation.
 
-One example of a group is the general Lie group \\(GL(n, \R)\\). The general linear group is constructed from the set of endomorphisms (linear maps taking a vector from space to another vector in the same space) equipped with the composition of maps operation. The set is restricted to linear maps whose determinant is non-zero.
+One example of a group is the general linear group \\(GL(n, \R)\\). The general linear group is constructed from the set of endomorphisms (linear maps taking a vector from space to another vector in the same space) equipped with the composition of maps operation. The set is restricted to linear maps whose determinant (anti-symmetric area function discussed previously) is non-zero as formally shown below. Take special notice, following this definition we cannot say the elements of the group are simply matrices. This link will be established rigorously when discussing representations of a group.
 
 \\[ G \coloneqq \Set{ \phi: \R^n \xrightarrow{\sim} \R^n | det(\phi) \not = 0}\\]
 
 A subgroup of \\(GL(n, \R)\\) is the special linear group \\(SL(n, \R)\\) which adds an additional restriction that the determinant of the transformation is one. Another subgroup of \\(GL(n, \R)\\) is the orthogonal group \\(SO(n, \R)\\), which is the set of transformations which also preserve the Euclidean inner product. Subgroups is an important theme in the study of groups and will be explored later.
 
-There is a type of group which is of particular interest to us, namely: A Lie group. A Lie group, is first and foremost a group. A Lie group is also a group which can be represented as a smooth manifold. This may seem odd at first even when considering smooth manifolds are abstract structures (i.e. just a sets equipped with a topology and a smooth atlas). It helped me considering manifolds are useful for representing **continuous** transformations. An example is the continuous rotations group \\(SO(3)\\) in \\(\R^3\\) and is represented as solid sphere manifold. Each point will lie on some axis of the sphere, and hence correspond to some angle rotation along that axis. The distance away from that axis represents the angle of rotation. Hence each point on this manifold represents some rotation operation. By considering groups as manifolds, we can also apply the differential geometry tools made available to us.
+There is a type of group which is of particular interest to us, namely: A Lie group. A Lie group, is first and foremost a group. A Lie group is also a group which can be represented as a smooth manifold. This may seem odd at first even when considering smooth manifolds are abstract structures (i.e. just a sets equipped with a topology and a smooth atlas). But consider manifolds are useful for representing **continuous** transformations. An example is the continuous rotations group \\(SO(3)\\) in \\(\R^3\\) and is represented as solid sphere manifold. Each point will lie on some axis of the sphere, and hence correspond to some angle rotation along that axis. The distance away from that axis represents the angle of rotation. Hence each point on this manifold represents some rotation operation. By considering groups as manifolds, we can also apply the differential geometry tools made available to us.
 
-The vector field of an example \\(SO(3)\\) Lie group (i.e. the rotations in \\(\R^3\\)) may indicate the velocities of various rotations. Recall, a point on Lie group manifold represents some rotation operation, and the tangent space at a point can have the interpretation of all the possible velocities of possible curves through that point.
+For example, in differential geometry there is a lot of emphasis on the vector field acting on a manifold. A vector field of a Lie group, for an example \\(SO(3)\\) (i.e. the rotations in \\(\R^3\\)), may indicate the velocities of various rotations. Recall, a point on Lie group manifold represents some rotation operation, and the tangent space at a point thus has the interpretation of all the possible velocities of possible curves through that point.
 
 
 ## Left translation operation {#left-translation-operation}
 
-For any (Lie) group, we can define a left translation map \\(l\_g\\)  which fixes an element \\(g \in G\\) and applies it after any element \\(h \in G\\). Although the notation is strange, simply keep in mind we are studying the behaviour of a function which applies \\(g\\) after any other element in the group. It doesn't matter what \\(h\\) is in the study of this function \\(l\_g\\). For intuition, also consider \\(l\_g\\) produces a manifold isomorphic to \\(G\\) and we will see later which properties can be pushed forward or pulled back between these two manifolds.
+For any (Lie) group, we can define a left translation map \\(l\_g\\)  which fixes an element \\(g \in G\\) and applies it after any element \\(h \in G\\). Although the notation is strange, simply keep in mind we are studying the behaviour of this operation which applies \\(g\\) after any other element in the group. It doesn't matter what \\(h\\) is in the study of this operator \\(l\_g\\). Also consider the operator \\(l\_g\\) produces a manifold isomorphic to \\(G\\). We will see later which properties can be pushed forward or pulled back between these two manifolds.
 
 \\[l\_g: G \rightarrow G\\]
 \\[h \mapsto l\_g(h) \coloneqq g \cdot h\\]
@@ -41,7 +41,7 @@ For any (Lie) group, we can define a left translation map \\(l\_g\\)  which fixe
 
 ## Push forward and pull back for \\(l\_g\\) {#push-forward-and-pull-back-for-l-g}
 
-Recall, for a given map \\(\phi: M \rightarrow N\\), we can infer properties between the two manifolds. \\(l\_g\\) is such a map. First we can define a pull back map \\(l\_{g^{\*}}\\) which, given knowledge of the covectors for points in \\(N\\), allows us to infer to the covectors at the mapped point in \\(M\\). We were able to extend this pull-back map, such that the covector field in \\(N\\) can tell us about the covector field in \\(M\\). Notice, we can't simply extend the push forward map \\(l\_{g\_{\*}}\\) in the same way. We can't push a vector field acting in \\(M\\) to \\(N\\) the same way we can push the vector at a point in \\(M\\) to \\(N\\). A vector field can only be pushed to \\(N\\) if the map \\(\phi\\) is smooth and diffeo.
+Recall, for a given map \\(\phi: M \rightarrow N\\), we can infer properties between the two manifolds. \\(l\_g\\) is one such map. First we can define a pull back map \\(l\_{g^{\*}}\\) which, given knowledge of the covectors for points in \\(N\\), allows us to infer to the covectors at the mapped point in \\(M\\). We were able to extend this pull-back map, such that the covector field in \\(N\\) can tell us about the covector field in \\(M\\). Notice, we can't simply extend the push forward map \\(l\_{g\_{\*}}\\) in the same way. We can't push a vector field acting in \\(M\\) to \\(N\\) the same way we can push the vector at a point in \\(M\\) to \\(N\\). A vector field can only be pushed to \\(N\\) if the map \\(\phi\\) is smooth and diffeo.
 
 
 ## Left-invariant vector fields {#left-invariant-vector-fields}
@@ -80,16 +80,16 @@ Finally a Lie algebra is differentiated from the Lie group by being written in l
 
 ## Representation of a Lie algebra {#representation-of-a-lie-algebra}
 
-A linear representation \\(\rho\\) of a Lie algebra is a linear map to the set of endomorphisms for a vector space \\(V\\) (i.e. maps elements in a vector space into itself) such that the Lie bracket is simply the commutator in the **representation space** \\(V\\).
+To make working with a group more concrete, we can represent the elements of a group as the linear transformations of a vector space. Formally, a representation \\(\rho\\) of a Lie algebra is a linear map to the set of endomorphisms for a vector space \\(V\\) (i.e. maps elements in a vector space into itself) such that the Lie bracket is simply the commutator in the **representation space** \\(V\\).
 
 \\[\rho: L \xrightarrow{\sim} End(V)\\]
 \\[\rho(\llbracket a, b \rrbracket) = [\rho(a),\rho(b)] = a \circ b - b \circ a \\]
 
-The motivation for introducing the adjoint operation acting on the set of left-invariant vector fields for a Lie group \\(L(G)\\), is to define a Lie bracket as simply the commutator of vector fields as follows:
+We saw previously, we can make the set of left invariant vector fields of a Lie group into a algebra by introducing the adjoint operation. Similarly we can extend the representation space \\(V\\) to be an algebra by equipping the space with a bilinear operation \\(\llbracket \cdot, \cdot \rrbracket\\) called the Lie bracket. The Lie bracket defined in terms of the adjoint operation which acts on the push forward of vectors in the left-invariant vector fields of the group.
 
 \\[ \llbracket a, b \rrbracket = [l\_{g^\*}(a), l\_{g^\*}(b)]\\]
 
-The adjoint representation is not the only representation of a Lie algebra. For example the Lie algebra \\(\frak{so}(3, \R)\\) also has a representation \\(\rho: \frak{so}(3, \R) \rightarrow End(\R^3)\\) or, more famously, the spin representation \\(\frak{so}(3, \R) \rightarrow End(\cnums^2)\\).
+The adjoint representation is not the only representation of a Lie algebra. A representation depends on the type vector space and its underlying field. For example the Lie algebra \\(\frak{so}(3, \R)\\) also has a representation \\(\rho: \frak{so}(3, \R) \rightarrow End(\R^3)\\) or, more famously, the spin representation \\(\frak{so}(3, \R) \rightarrow End(\cnums^2)\\).
 
 
 ## Isomorphism between vector fields on Lie groups and vectors in Lie algebra {#isomorphism-between-vector-fields-on-lie-groups-and-vectors-in-lie-algebra}
