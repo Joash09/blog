@@ -1,0 +1,8 @@
+{{/* Get the file path from the shortcode parameters */}}
+{{ $modelPath := .Get "modelPath" }}
+{{ $imgPath := .Get "imgPath" }}
+
+<div style="display:flex; gap:1rem; align-items:flex-start;">
+  <iframe src="{{ $modelPath }}" style="width:50%;height:600px"></iframe>
+  <img src="{{ $imgPath }}" style="width:50%; object-fit:contain;" />
+</div>
