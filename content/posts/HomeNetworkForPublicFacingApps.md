@@ -1,5 +1,5 @@
 +++
-title = "Towards a home network for public facing apps"
+title = "A home network for public facing apps"
 author = ["Joash Naidoo"]
 date = 2026-01-27T00:00:00-00:00
 tags = ["networking", "Mikrotik", "VLAN", "Wireguard", "firewalls", "iproute2", "nginx", "container-hardening"]
@@ -353,6 +353,8 @@ For another usecase of policy routing refer to the Docker section at the end.
 ### Cloudflare {#cloudflare}
 
 Cloudflare as a DNS provider offers to freely proxy all requests destined for your public facing applications. By proxying your requests, Cloudflare will be able to detect attacks (commonly DDOS attacks) and block them before reaching your application. Of course this comes with an element of trust as their hardware will decrypt traffic between you and cloudflare and then encrypt it using their own certificates between the client and them. However, as a company specialising in internet security I believe this is a minor issue and their is still opportunity to improve security further on the networks we control. It is vital to understand Cloudflare reverse proxy is not silver bullet to internet security. A vunerablility in your public facing application that can be exploited through a valid request will not be blocked by Cloudflare and can still comprimise your entire system.
+
+{{< figure src="/ox-hugo/CloudflareProxyEncryption.png" >}}
 
 
 ### NGINX Reverse Proxy {#nginx-reverse-proxy}
