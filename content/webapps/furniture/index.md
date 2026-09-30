@@ -10,6 +10,12 @@ Given my entirely unnecessary but irresistible urge to build everything from scr
 
 PS: The 3D models are interactable - enjoy!
 
+## Angle adjustable book stand
+
+![Bookstand in action](/furniture/bookstand_in_action.jpeg)
+![Bookstand fully upright](/furniture/bookstand_fully_upright.jpeg)
+![Bookstand fully collapsed](/furniture/bookstand_fully_collapsed.jpeg)
+
 ## Screen stand and headphone holder
 
 {{< step-model-viewer modelPath="/furniture/deskstand.html" imgPath="/furniture/deskstand.jpeg" >}}
