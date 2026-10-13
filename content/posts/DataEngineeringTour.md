@@ -39,14 +39,28 @@ However, returning to the industry movement of storing large amounts of unstrucu
 
 Naturally, the philosphy of "store now; process later" particularly with unstrucutred data meant data lakes can get quite messy. Scanning your data set for a particular file, would result in scanning the entire storage space all over again (functionality lost since the filesystem was replaced with object storage). A "messy" data lake without a "data strategy or governance" is sometimes referred to as a **data swamp**.
 
-Thus to keep data lakes organized, a hybrid approach was adapted to reintroduce some of the benefits of a filesystem. This hybrid adoption is being led by the Apache Iceberg project. The Iceberg project is simply a table format for organizing files in object storage. It can be thought of as not only a table schema for storing information about files in a data lake but also defines a process for how data is inserted / updated. Allowing for clear oversight over how the storage is evolving at various points in time and searchable metadata about the files in object storage.
+Thus to keep data lakes organized, a hybrid approach was adapted to reintroduce some of the organizational benefits of a filesystem. This organization is achieved with an **open table format** for organizing data in your object storage by registering metadata stored in parquet files (benefits of which are discussed later) which are also stored in object storage. Examples include Apache Iceberg and Databricks' Delta Lake. This metadata is snapshotted and managed by the open table format so that your unstructured data is now queryable from a SQL engine. And although it is easier to reason about metadata from the perspective of unstructured data first, turns out structured data can also benefit from a lakehouse setup. I will illustrate both in the following two workflows.
 
-The workflow will be as follows:
+The unstructured data workflow could be as follows:
 
-1.  New unstructured data is introduced to the storage space.
-2.  The data is processed using some sort of processing technique, such as machine learning, to produce metadata about the file often in the form of tag.
-3.  The file is then stored on object storage and the metadata and location of the file is stored using Iceberg's metadata tables.
-4.  Thus data analysts in the future can simply search the Iceberg tables for desired data as opposed to scanning the entire storage space again.
+1.  New unstructured data (multiple files) is introduced to the storage space.
+2.  The data is processed using some sort of processing technique, such as machine learning, to producing a metadata table (dataframe in the Python context) whose columns describe stats about a particular file.
+3.  This metadata dataframe and the location of corresponding files are then registered with a table format tool such as Apache Iceberg or Databricks' Delta Lake. Behind the scenes a Parquet file is written (which is suitable since the metadata is a structured table)
+4.  Anaylsts can then query the metadata of those files using a SQL query engine (such as Trino or Databricks SQL) that integrates with the open table format
+5.  The open table format tool also keeps track of changes, says for instance a second run of our procesing pipeline produces different results, the new metadata table is registered to a new parquet file and it is up to the open table tool to determine which is the latest version.
+
+Another workflow includes pairing our structured data with the benefits of distributed storage for the purposes of analysis. I will highlight the medallion data model.
+
+1.  Source data lands in our object storage
+2.  Using some processing pipeline (e.g. Python notebooks) create three dataframes for the bronze, silver and gold tier of our business use case
+    -   Bronze: the raw data
+    -   Silver: the cleaned/validated/normalized data
+    -   Gold: the aggregated / data ready for use semantic layer (business intelligence layer)
+3.  Those dataframes get registered with the open table format tool which is supported by Parquet files
+4.  Structure data is then able to be queried using a SQL query engine that intergrates with the open table format. Performance is now better than querying relational database directly (datawarehouse) in part due to the Parquet file format which is discussed in further detail below.
+5.  Data reloads will result in new dataframes managed by the open table format tool so we know files correspond to the latest version
+
+{{< figure src="/ox-hugo/DataLakehouseWorkflows.png" >}}
 
 
 ### Data streams {#data-streams}
