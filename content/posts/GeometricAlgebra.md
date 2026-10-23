@@ -7,7 +7,7 @@ draft = false
 math = true
 +++
 
-This post revisits the exterior product, forms and exterior derivative which was previously discussed in my vector spaces writeup. In revisting this section was necessary before being able to come to terms with covariant exterior derivatives when thinking about connections on fiber bundles which is discussed the next writeup.
+This post revisits the exterior product, forms and exterior derivative which was previously discussed in my vector spaces writeup. Revisting this section was necessary before coming to terms with the covariant exterior derivative when thinking about connections on fiber bundles which is discussed the next writeup.
 
 <!--more-->
 
