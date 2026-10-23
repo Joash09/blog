@@ -35,24 +35,24 @@ For example, in differential geometry there is a lot of emphasis on the vector f
 
 For any (Lie) group, we can define a left translation map \\(l\_g\\)  which fixes an element \\(g \in G\\) and applies it after any element \\(h \in G\\). Although the notation is strange, simply keep in mind we are studying the behaviour of this operation which applies \\(g\\) after any other element in the group. It doesn't matter what \\(h\\) is in the study of this operator \\(l\_g\\). Also consider the operator \\(l\_g\\) produces a manifold isomorphic to \\(G\\). We will see later which properties can be pushed forward or pulled back between these two manifolds.
 
-\\[l\_g: G \rightarrow G\\]
-\\[h \mapsto l\_g(h) \coloneqq g \cdot h\\]
+\\[l_g: G \rightarrow G\\]
+\\[h \mapsto l_g(h) \coloneqq g \cdot h\\]
 
 
 ## Push forward and pull back for \\(l\_g\\) {#push-forward-and-pull-back-for-l-g}
 
-Recall, for a given map \\(\phi: M \rightarrow N\\), we can infer properties between the two manifolds. \\(l\_g\\) is one such map. First we can define a pull back map \\(l\_{g^{\*}}\\) which, given knowledge of the covectors for points in \\(N\\), allows us to infer to the covectors at the mapped point in \\(M\\). We were able to extend this pull-back map, such that the covector field in \\(N\\) can tell us about the covector field in \\(M\\). Notice, we can't simply extend the push forward map \\(l\_{g\_{\*}}\\) in the same way. We can't push a vector field acting in \\(M\\) to \\(N\\) the same way we can push the vector at a point in \\(M\\) to \\(N\\). A vector field can only be pushed to \\(N\\) if the map \\(\phi\\) is smooth and diffeo.
+Recall, for a given map \\(\phi: M \rightarrow N\\), we can infer properties between the two manifolds. \\(l\_g\\) is one such map. First we can define a pull back map \\(l\_{g^{\ast}}\\) which, given knowledge of the covectors for points in \\(N\\), allows us to infer to the covectors at the mapped point in \\(M\\). We were able to extend this pull-back map, such that the covector field in \\(N\\) can tell us about the covector field in \\(M\\). Notice, we can't simply extend the push forward map \\(l\_{g\_{\ast}}\\) in the same way. We can't push a vector field acting in \\(M\\) to \\(N\\) the same way we can push the vector at a point in \\(M\\) to \\(N\\). A vector field can only be pushed to \\(N\\) if the map \\(\phi\\) is smooth and diffeo.
 
 
 ## Left-invariant vector fields {#left-invariant-vector-fields}
 
-Given a Lie group \\((G, \bullet)\\) a vector field \\(X\\) on \\(G\\) is **left-invariant** if the vector field remains the same after it is pushed forward by \\(l\_{g^{\*}}\\).
+Given a Lie group \\((G, \bullet)\\) a vector field \\(X\\) on \\(G\\) is **left-invariant** if the vector field remains the same after it is pushed forward by \\(l\_{g^{\ast}}\\).
 
-\\[ X = l\_{g^{\*}}X \\]
+\\[ X = l\_{g^{\ast}}X \\]
 
 More practically, when thinking of the tangent vectors individually at a point \\(h\\) or acting on some smooth function \\(f \in C^{\infty}(G)\\) we can use the definitions below. In both cases, the push forward of tangent vector at a point \\(h\\), is equivalent to the tangent vector after just applying a transformation \\(g\\) after \\(h\\). Note that the set of all left-invariant vector fields on \\(G\\) is given the symbol \\(L(G)\\) and naturally \\(L(G)\\) is a subset of the set of all vector fields \\(\Gamma(TG)\\).
 
-\\[\forall h \in G: l\_{g\*}(X\_h) = X\_{gh}\\]
+\\[\forall h \in G: l\_{g\ast}(X\_h) = X\_{gh}\\]
 \\[\forall f \in C^{\infty}(G): X(f \circ l\_g) = (Xf)\circ l\_g\\]
 \\[L(G) \subset \Gamma(TG) \\]
 
@@ -87,7 +87,7 @@ To make working with a group more concrete, we can represent the elements of a g
 
 We saw previously, we can make the set of left invariant vector fields of a Lie group into a algebra by introducing the adjoint operation. Similarly we can extend the representation space \\(V\\) to be an algebra by equipping the space with a bilinear operation \\(\llbracket \cdot, \cdot \rrbracket\\) called the Lie bracket. The Lie bracket defined in terms of the adjoint operation which acts on the push forward of vectors in the left-invariant vector fields of the group.
 
-\\[ \llbracket a, b \rrbracket = [l\_{g^\*}(a), l\_{g^\*}(b)]\\]
+\\[ \llbracket a, b \rrbracket = [l\_{g^\ast}(a), l\_{g^\ast}(b)]\\]
 
 The adjoint representation is not the only representation of a Lie algebra. A representation depends on the type vector space and its underlying field. For example the Lie algebra \\(\frak{so}(3, \R)\\) also has a representation \\(\rho: \frak{so}(3, \R) \rightarrow End(\R^3)\\) or, more famously, the spin representation \\(\frak{so}(3, \R) \rightarrow End(\cnums^2)\\).
 
@@ -101,7 +101,7 @@ There is an equivalence between thinking of a vector field or simply thinking ab
 One can prove this vector space isomorphism by introducing the following linear map \\(j\\), and showing \\(j\\) is linear, left-invariant bijective map. For more tangible calculations \\(j\\) is referred to as the **exponential** map.
 
 \\[j: T\_eG \xrightarrow{\sim} L(G)\\]
-\\[A \mapsto j(A) \coloneqq l\_{g^\*}(A) \quad \forall g \in G\\]
+\\[A \mapsto j(A) \coloneqq l\_{g^\ast}(A) \quad \forall g \in G\\]
 
 
 ## Classifying Lie subgroups and subalgebras {#classifying-lie-subgroups-and-subalgebras}
@@ -216,21 +216,21 @@ For any finite dimension Lie algebra, there exists a Cartan subalgebra \\(H\\), 
 \\[H \subset L\\]
 \\[\underbrace{ad(h)\underbrace{e\_\alpha}\_{\text{vector (i.e. derivative operator)}}}\_{\text{commutator for 2 vectors}} = \underbrace{\lambda\_\alpha(h)}\_{\in \cnums}e\_\alpha\\]
 
-Take note \\(\lambda\\) is a linear map \\(H \xrightarrow{\sim} \cnums\\), hence belongs to the dual of Cartan subalgebra \\(H^\*\\). The set of these linear maps is referred to as the **root set** \\(\Phi\\).
+Take note \\(\lambda\\) is a linear map \\(H \xrightarrow{\sim} \cnums\\), hence belongs to the dual of Cartan subalgebra \\(H^\ast\\). The set of these linear maps is referred to as the **root set** \\(\Phi\\).
 
-\\[ \Phi \coloneqq \Set{\lambda\_1, \dots, \lambda\_{d-m}} \subset H^\* \\]
+\\[ \Phi \coloneqq \Set{\lambda\_1, \dots, \lambda\_{d-m}} \subset H^\ast \\]
 
-The root set of the Cartan algebra are not linearly independent. The root set _always_ contains a linearly independent subset \\(\Pi\\) called the fundamental roots which cover the entire span of \\(H^{\*}\\) (i.e. we can find a basis for \\(H^\*\\)).
+The root set of the Cartan algebra are not linearly independent. The root set _always_ contains a linearly independent subset \\(\Pi\\) called the fundamental roots which cover the entire span of \\(H^{\ast}\\) (i.e. we can find a basis for \\(H^\ast\\)).
 
 \\[\Pi \subset \Phi\\]
-\\[span(\pi) = H^{\*} \quad\text{where } \pi \in \Pi\\]
+\\[span(\pi) = H^{\ast} \quad\text{where } \pi \in \Pi\\]
 \\[\forall \lambda \in \Phi: \exists n\_1, \dots, n\_f \in \N: \exists \epsilon \in \Set{-1, 1}: \lambda = \epsilon \sum^f\_{i=1}n\_i\pi\_i\\]
 
-It is also useful to define the Killing form \\(K^\*\\) which acts on elements of the dual of the Cartan subalgebra and maps them to the underlying field, as per the aforementioned definition. This tremendously useful, since as mentioned previously, if the Killing form is positive definite and non-degenerate, then it acts as a pseudo inner product which allows us to calculate the lengths and angles between the fundamental roots (i.e. the linear independent basis vectors of the Cartan subalgebra).
+It is also useful to define the Killing form \\(K^\ast\\) which acts on elements of the dual of the Cartan subalgebra and maps them to the underlying field, as per the aforementioned definition. This tremendously useful, since as mentioned previously, if the Killing form is positive definite and non-degenerate, then it acts as a pseudo inner product which allows us to calculate the lengths and angles between the fundamental roots (i.e. the linear independent basis vectors of the Cartan subalgebra).
 
-\\[K^\*: H^\* \times H^\* \rightarrow \cnums\\]
-\\[K^\*(\mu, v) \coloneqq K(i^{-1}(\mu), i^{-1}(v)) \quad\text{where}\\]
-\\[i : H \rightarrow H^\*\\]
+\\[K^\ast: H^\ast \times H^\ast \rightarrow \cnums\\]
+\\[K^\ast(\mu, v) \coloneqq K(i^{-1}(\mu), i^{-1}(v)) \quad\text{where}\\]
+\\[i : H \rightarrow H^\ast\\]
 \\[i(h) \coloneqq K(h, \cdot)\\]
 
 
@@ -241,10 +241,10 @@ If the Lie algebra is simple, then the Cartan subalgebra \\(H\\) is abelian (i.e
 
 ## Weyl transformation and group {#weyl-transformation-and-group}
 
-Recall the fundamental roots \\(\Pi\\) of a Cartan subalgebra \\(H\\) are the set of linearly independent maps to determine the eigenvalues of the remaining basis vectors of the entire Lie algebra \\(L\\). These linear maps form part of a larger set called the root set \\(\Phi\\). This section simply looks at how we can reconstruct \\(\Phi\\) given \\(\Pi\\). We will require the map \\(K^\*\\), which was introduced in the previous section, and under certain conditions, provides us with a notion of calculating lengths and angles between the fundamental roots. To reconstruct \\(\Phi\\), introduce a linear map \\(s\_\lambda\\) which takes an element in the dual of the Cartan algebra and maps it to another element in the dual of the Cartan algebra. This map is called the Weyl transformation.
+Recall the fundamental roots \\(\Pi\\) of a Cartan subalgebra \\(H\\) are the set of linearly independent maps to determine the eigenvalues of the remaining basis vectors of the entire Lie algebra \\(L\\). These linear maps form part of a larger set called the root set \\(\Phi\\). This section simply looks at how we can reconstruct \\(\Phi\\) given \\(\Pi\\). We will require the map \\(K^\ast\\), which was introduced in the previous section, and under certain conditions, provides us with a notion of calculating lengths and angles between the fundamental roots. To reconstruct \\(\Phi\\), introduce a linear map \\(s\_\lambda\\) which takes an element in the dual of the Cartan algebra and maps it to another element in the dual of the Cartan algebra. This map is called the Weyl transformation.
 
-\\[s\_\lambda: H^\* \rightarrow H^\*\\]
-\\[s\_{\lambda}(\mu) \coloneqq \mu - 2 \frac{K^{\*}(\lambda, \mu)}{K^\*(\lambda, \lambda)}\lambda \\]
+\\[s\_\lambda: H^\ast \rightarrow H^\ast\\]
+\\[s\_{\lambda}(\mu) \coloneqq \mu - 2 \frac{K^{\ast}(\lambda, \mu)}{K^\ast(\lambda, \lambda)}\lambda \\]
 
 We can construct group \\(W\\) as the set of Weyl transforms for roots in the root set (i.e. \\(\lambda \in \Phi\\)) with the composition of maps as the group operator.
 
